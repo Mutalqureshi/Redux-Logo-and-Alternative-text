@@ -1,8 +1,29 @@
 <div class="logo">
-                      <?php if($fdata['site-logo']['url']){
-                      $logo = $fdata['site-logo']['id'];
-                        $image_alt = get_post_meta($logo, '_wp_attachment_image_alt', TRUE);
-                      echo '<a href="'.get_site_url().'" class="header-logo"><img src="'.$fdata['site-logo']['url'].'" alt="'.$image_alt.'"></a>';
-                        }
-                      ?>  
-                  </div>
+          <?php if($fdata['site-logo']['url']){
+          $logo = $fdata['site-logo']['id'];
+            $image_alt = get_post_meta($logo, '_wp_attachment_image_alt', TRUE);
+          echo '<a href="'.get_site_url().'" class="header-logo"><img src="'.$fdata['site-logo']['url'].'" alt="'.$image_alt.'"></a>';
+            }
+          ?>  
+</div>
+
+
+
+
+
+
+
+
+
+----------------
+
+short code post image alternative text
+
+
+
+   if (has_post_thumbnail($post_id)) { 
+                            $url = wp_get_attachment_image_src(get_post_thumbnail_id($post_id), 'service_home'); 
+                            $img_id = get_post_thumbnail_id($post_id);
+                            $image_alt = get_post_meta($img_id, '_wp_attachment_image_alt', TRUE);
+                            $html .='<img src="'.$url[0].'" alt="'.$image_alt.'">';
+                         }
