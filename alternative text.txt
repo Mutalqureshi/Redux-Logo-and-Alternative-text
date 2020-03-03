@@ -1,0 +1,8 @@
+<div class="logo">
+                      <?php if($fdata['site-logo']['url']){
+                      $logo = $fdata['site-logo']['id'];
+                        $image_alt = get_post_meta($logo, '_wp_attachment_image_alt', TRUE);
+                      echo '<a href="'.get_site_url().'" class="header-logo"><img src="'.$fdata['site-logo']['url'].'" alt="'.$image_alt.'"></a>';
+                        }
+                      ?>  
+                  </div>
